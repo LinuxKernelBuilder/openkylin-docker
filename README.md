@@ -1,11 +1,11 @@
 #### 安装 https 请求库
-
+```
 sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
     lsb-release
-
+```
 #### 添加Docker的官方GPG密钥
 
 sudo mkdir -p /etc/apt/keyrings
