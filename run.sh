@@ -46,8 +46,8 @@ pwd
 sudo docker ps -a
 docker commit openkylin openkylin-test:latest
 docker save -o openkylin-test.tar openkylin-test:latest
-sudo mkdir "artifact"
+mkdir "artifact"
 ls -al
 sudo chmod 777 openkylin-test.tar
 ls -al
-sudo mv ./*.tar artifact/
+mv ./*.tar artifact/
