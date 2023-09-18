@@ -31,8 +31,7 @@ sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
 sudo docker exec openkylin  vim --version /bin/bash
 sudo docker exec openkylin neofetch --version /bin/bash
 sudo docker images
-pwd
-sudo docker ps -a
+
 docker commit openkylin openkylin-test:latest
 docker save -o openkylin-test.tar openkylin-test:latest
 mkdir "artifact"
