@@ -22,8 +22,6 @@ sudo docker import yangtze-rootfs.tar.gz openkylin:latest
 sudo docker images
 sudo docker ps -a
 sudo docker run -it openkylin 
-sudo docker start openkylin
-sudo docker attach openkylin
 #以下应该是要在docker环境中进行操作的项目
 
 sudo apt install neofetch
