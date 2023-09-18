@@ -14,7 +14,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker --version
 
 sudo neofetch
-
+pwd
 sudo service docker start #运行 Docker 服务
 sudo systemctl enable docker #使 Docker 服务在每次重启时自动启动
 
@@ -29,4 +29,4 @@ sudo apt install neofetch
 sudo neofetch
 
 
-sudo systemd-detect-virt -c
+pwd
