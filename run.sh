@@ -1,3 +1,4 @@
+sudo apt-get upgrade -y
 wget https://github.com/LinuxKernelBuilder/openkylin-docker/releases/download/V0.1/yangtze-rootfs.tar.gz
 
 sudo mkdir -p /etc/apt/keyrings
@@ -10,7 +11,7 @@ sudo echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://downl
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin neofetch
 sudo docker --version
 
-neofetch
+sudo neofetch
 
 sudo service docker start
 
