@@ -6,11 +6,6 @@ jobs:
     name: Build kernel
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Run docker-compose exec
-    run: |
-      script -q -e -c "docker-compose exec web bash"
-      script -q -e -c "docker-compose exec db psql"
       
       - name: Checkout
         uses: actions/checkout@main
