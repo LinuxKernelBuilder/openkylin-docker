@@ -35,3 +35,7 @@ sudo docker exec openkylin bash -c "sudo apt install -y vim"
 sudo docker exec openkylin vim --version \bin\bash
 pwd
 sudo docker ps -a
+sudo docker commit openkylin openkylin-test:latest
+sudo docker save -o openkylin-test.tar openkylin-test:latest
+
+sudo mv ./*.tar artifact/
