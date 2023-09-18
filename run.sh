@@ -23,9 +23,7 @@ sudo docker images
 sudo docker ps -a
 sudo docker run -d --name openkylin openkylin:latest /bin/bash
 sudo docker run -d openkylin /bin/bash
-sudo docker ps -a
 sudo docker start openkylin
-#以下应该是要在docker环境中进行操作的项目
 
 
 sudo docker ps
