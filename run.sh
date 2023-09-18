@@ -29,7 +29,7 @@ sudo docker start openkylin:latest
 #以下应该是要在docker环境中进行操作的项目
 
 
-
+sudo docker ps
 sudo docker exec openkylin vim --version /bin/bash
 sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
