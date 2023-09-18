@@ -31,7 +31,7 @@ sudo apt install neofetch
 sudo neofetch
 
 sudo docker exec openkylin vim --version \bin\bash
-sudo docker exec openkylin bash -c "sudo apt install vim"
+sudo docker exec openkylin bash -c "sudo apt install -y vim"
 sudo docker exec openkylin vim --version \bin\bash
 pwd
 sudo docker ps -a
