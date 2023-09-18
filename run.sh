@@ -3,7 +3,7 @@ wget https://github.com/LinuxKernelBuilder/openkylin-docker/releases/download/V0
 
 sudo mkdir -p /etc/apt/keyrings
 
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 #Ubuntu可以直接获取docker镜像源进行安装
@@ -15,7 +15,8 @@ sudo docker --version
 
 sudo neofetch
 
-sudo service docker start
+sudo service docker start #运行 Docker 服务
+sudo systemctl enable docker #使 Docker 服务在每次重启时自动启动
 
 sudo docker import yangtze-rootfs.tar.gz openkylin:latest
 
