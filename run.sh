@@ -28,16 +28,13 @@ sudo docker start openkylin
 sudo docker start openkylin:latest
 #以下应该是要在docker环境中进行操作的项目
 
-sudo apt install neofetch
-
-sudo neofetch
 
 
-sudo docker exec openkylin:latest vim --version \bin\bash
-sudo docker exec openkylin:latest bash -c "sudo apt update && sudo apt upgrade"
-sudo docker exec openkylin:latest bash -c "sudo apt install -y vim neofetch"
-sudo docker execopenkylin:latest  vim --version \bin\bash
-sudo docker exec openkylin:latest neofetch --version \bin\bash
+sudo docker exec openkylin vim --version \bin\bash
+sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
+sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
+sudo docker execopenkylin  vim --version \bin\bash
+sudo docker exec openkylin neofetch --version \bin\bash
 sudo docker images
 pwd
 sudo docker ps -a
