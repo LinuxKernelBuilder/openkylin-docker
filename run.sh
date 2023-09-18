@@ -32,15 +32,12 @@ sudo apt install neofetch
 
 sudo neofetch
 
-sudo docker exec openkylin vim --version \bin\bash
-sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
-sudo docker exec openkylin vim --version \bin\bash
-sudo docker exec openkylin neofetch \bin\bash
 
 sudo docker exec openkylin:latest vim --version \bin\bash
+sudo docker exec openkylin:latest bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec openkylin:latest bash -c "sudo apt install -y vim neofetch"
 sudo docker execopenkylin:latest  vim --version \bin\bash
-sudo docker exec openkylin:latest neofetch \bin\bash
+sudo docker exec openkylin:latest neofetch --version \bin\bash
 sudo docker images
 pwd
 sudo docker ps -a
