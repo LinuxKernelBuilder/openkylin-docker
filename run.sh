@@ -33,7 +33,7 @@ sudo docker start openkylin:latest
 sudo docker exec openkylin vim --version \bin\bash
 sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
-sudo docker execopenkylin  vim --version \bin\bash
+sudo docker exec openkylin  vim --version \bin\bash
 sudo docker exec openkylin neofetch --version \bin\bash
 sudo docker images
 pwd
