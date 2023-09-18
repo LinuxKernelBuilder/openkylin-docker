@@ -19,9 +19,10 @@ sudo service docker start #运行 Docker 服务
 sudo systemctl enable docker #使 Docker 服务在每次重启时自动启动
 
 sudo docker import yangtze-rootfs.tar.gz openkylin:latest
-
+sudo docker images
+sudo docker ps -a
 sudo docker run -it --name openkylin openkylin
-
+sudo docker ps -a
 #以下应该是要在docker环境中进行操作的项目
 
 sudo apt install neofetch
