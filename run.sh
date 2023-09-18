@@ -5,8 +5,10 @@ sudo mkdir -p /etc/apt/keyrings
 
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-sudo echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+#Ubuntu可以直接获取docker镜像源进行安装
+sudo apt update -y
+sudo apt upgrade -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin neofetch
 sudo docker --version
@@ -25,3 +27,5 @@ sudo apt install neofetch
 
 sudo neofetch
 
+
+sudo systemd-detect-virt -c
