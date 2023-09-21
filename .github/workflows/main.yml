@@ -5,8 +5,7 @@ jobs:
   build:
     name: Build kernel docker
     runs-on: ubuntu-latest
-    steps:
-      
+    steps:      
       - name: Checkout
         uses: actions/checkout@main
       - uses: actions/setup-node@v3
@@ -22,18 +21,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Build
         run: |
           sudo bash 1.sh
           sudo bash 2.sh
-
-
       - name: Artifact
         uses: actions/upload-artifact@v3
         with:
           name: artifact
           path: ${{ github.workspace }}/artifact/
-
+      - name: Docker image tag
+        run: docker tag openkylin:latest ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:latest
       - name: Docker image push
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:latest
