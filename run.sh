@@ -26,7 +26,7 @@ sudo docker images "*/*openkylin*"
 #sudo docker images "*/*openkylin*" --format "{{.ID}}"
 xxtx=$(sudo docker images "*/*openkylin*" --format "{{.ID}}")
 echo "${xxtx}"
-xx=$(sudo docker container ls --format "{{.ID}}")
+xx=$(sudo docker container ls --format "{{.ID}}" | head -n 1)
 echo "${xx}"
 #sudo docker container ls --format "{{.ID}}"
 
