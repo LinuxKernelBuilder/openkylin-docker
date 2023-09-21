@@ -23,12 +23,13 @@ sudo docker images
 sudo docker ps -a
 sudo docker images "*/*openkylin*"
 # 使用单引号来包围*openkylin*
-sudo docker images "*/*openkylin*" --format "{{.ID}}"
+#sudo docker images "*/*openkylin*" --format "{{.ID}}"
 xxtx=$(sudo docker images "*/*openkylin*" --format "{{.ID}}")
 echo "${xxtx}"
 xx=$(sudo docker container ls --format "{{.ID}}")
-sudo docker container ls --format "{{.ID}}"
 echo "${xx}"
+#sudo docker container ls --format "{{.ID}}"
+
 # sudo docker run -d --name openkylin openkylin:latest /bin/bash
 sudo docker run -d  ${xxtx}  /bin/bash
 
