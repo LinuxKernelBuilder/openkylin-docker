@@ -23,7 +23,7 @@ sudo docker images
 sudo docker ps -a
 sudo docker images "*openkylin*"
 # 使用单引号来包围*openkylin*
-xxtxtop=$ (sudo docker images '*openkylin*' --format=\" { {.ID}}\" | head -n 1)
+xxtxtop=$ \(sudo docker images '*openkylin*' --format=\" { {.ID}}\" | head -n 1\)
 echo $xxtxtop
 # sudo docker run -d --name openkylin openkylin:latest /bin/bash
 sudo docker run -d --name openkylin xxtxtop/openkylin:lates  /bin/bash
