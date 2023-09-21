@@ -20,8 +20,8 @@ jobs:
 
       - name: Build
         run: |
-        bash 1.sh
-        bash 2.sh
+          sudo bash 1.sh
+          sudo bash 2.sh
 
 
       - name: Artifact
