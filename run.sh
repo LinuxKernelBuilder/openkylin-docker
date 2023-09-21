@@ -17,14 +17,14 @@ sudo neofetch
 pwd
 sudo service docker start #运行 Docker 服务
 sudo systemctl enable docker #使 Docker 服务在每次重启时自动启动
-docker pull xxtxtop/openkylin:lates
+docker pull ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:lates
 #sudo docker import yangtze-rootfs.tar.gz openkylin:latest
 sudo docker images
 sudo docker ps -a
 # sudo docker run -d --name openkylin openkylin:latest /bin/bash
-sudo docker run -d --name openkylin xxtxtop/openkylin:lates  /bin/bash
+sudo docker run -d --name openkylin ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:lates  /bin/bash
 sudo docker run -d openkylin /bin/bash
-sudo docker run -d xxtxtop/openkylin:lates /bin/bash
+sudo docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:lates /bin/bash
 sudo docker start openkylin
 
 sudo docker exec openkylin vim --version /bin/bash
@@ -34,8 +34,8 @@ sudo docker exec openkylin  vim --version /bin/bash
 sudo docker exec openkylin neofetch --version /bin/bash
 sudo docker images
 
-sudo docker tag openkylin:latest xxtxtop/openkylin:lates
-sudo docker push xxtxtop/openkylin:lates
+sudo docker tag openkylin:latest ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:lates
+sudo docker push ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:lates
 docker commit openkylin openkylin-test:latest
 docker save -o openkylin-test.tar openkylin-test:latest
 mkdir "artifact"
