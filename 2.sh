@@ -3,7 +3,8 @@
 sudo docker run -dit --name openkylin openkylin:latest  /bin/bash
 sudo docker run -dit openkylin:latest  /bin/bash
 sudo docker start openkylin
-
+sudo docker cp change_source.sh openkylin:/root
+sudo docker exec  openkylin /bin/bash /root/change_source.sh
 sudo docker exec openkylin vim --version /bin/bash
 sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
