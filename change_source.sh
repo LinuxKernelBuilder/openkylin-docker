@@ -13,4 +13,5 @@ deb http://archive.build.openkylin.top/openkylin yangtze-updates main
 deb http://archive.build.openkylin.top/openkylin yangtze-proposed main
 EOF
 
-sudo apt update
+sudo apt update && sudo apt upgrade
+sudo apt install -y devscripts git-buildpackage pristine-tar
