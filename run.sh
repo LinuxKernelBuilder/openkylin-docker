@@ -39,7 +39,7 @@ sudo docker run -d --name openkylin xxtxtop/openkylin:lates  /bin/bash
 sudo docker run -d openkylin /bin/bash
 sudo docker run -d xxtxtop/openkylin:lates /bin/bash
 sudo docker start openkylin
-
+}
 sudo docker exec ${xx} vim --version /bin/bash
 sudo docker exec ${xx} bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec ${xx} bash -c "sudo apt install -y vim neofetch"
@@ -51,7 +51,6 @@ sudo docker tag openkylin:latest ${xxtx}
 sudo docker push xxtxtop/openkylin:lates
 docker commit openkylin openkylin-test:latest
 docker save -o openkylin-test.tar ${xx}
-}
 mkdir "artifact"
 ls -al
 sudo chmod 777 openkylin-test.tar
