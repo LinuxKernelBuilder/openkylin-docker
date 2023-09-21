@@ -1,0 +1,45 @@
+name: Build kernel deb packages
+on: push
+
+jobs:
+  build:
+    name: Build kernel
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@main
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install curl and jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq ca-certificates curl gnupg lsb-release wget
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build
+        run: bash run.sh
+      - name: Run docker image
+        run: | 
+        sudo docker run -d  ${xxtx}  /bin/bash
+        sudo docker exec ${xx} vim --version /bin/bash
+        sudo docker exec ${xx} bash -c "sudo apt update && sudo apt upgrade"
+        sudo docker exec ${xx} bash -c "sudo apt install -y vim neofetch"
+        sudo docker exec ${xx}  vim --version /bin/bash
+        sudo docker exec ${xx} neofetch --version /bin/bash
+      - name: Exec docker image
+        run: |
+        sudo docker tag openkylin:latest ${xxtx}
+        docker save -o openkylin-test.tar ${xx}
+
+      - name: Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact/
