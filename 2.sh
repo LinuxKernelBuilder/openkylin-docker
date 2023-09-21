@@ -10,7 +10,7 @@ sudo docker exec  openkylin /bin/bash /root/change_source.sh
 sudo docker exec  openkylin /bin/bash /root/build.sh
 sudo docker exec openkylin bash -c "sudo tar -cf yangtze-rootfs.tar.gz -C /yangtze-rootfs ."
 sudo docker exec openkylin bash -c "ls -al"
-sudo docker cp openkylin:/root/yangtze-rootfs.tar.gz ./
+sudo docker cp openkylin:/yangtze-rootfs.tar.gz ./
 #sudo docker exec openkylin vim --version /bin/bash
 #sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
 #sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
