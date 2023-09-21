@@ -1,9 +1,9 @@
-name: Build kernel deb packages
+name: Build kernel deb packages and docker
 on: push
 
 jobs:
   build:
-    name: Build kernel
+    name: Build kernel docker
     runs-on: ubuntu-latest
     steps:
       
@@ -16,7 +16,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y curl jq ca-certificates curl gnupg lsb-release wget
-
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build
         run: |
@@ -29,3 +34,6 @@ jobs:
         with:
           name: artifact
           path: ${{ github.workspace }}/artifact/
+
+      - name: Docker image push
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/openkylin:latest
