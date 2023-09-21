@@ -9,7 +9,8 @@ sudo docker exec openkylin bash -c "sudo apt update && sudo apt upgrade"
 sudo docker exec openkylin bash -c "sudo apt install -y vim neofetch"
 sudo docker exec openkylin vim --version /bin/bash
 sudo docker exec openkylin neofetch --version /bin/bash
-
+sudo docker exec openkylin bash -c "sudo apt-get install  -y  git fakeroot build-essential libncurses-dev xz-utils libssl-dev bc flex libelf-dev bison"
+sudo docker exec openkylin bash -c "sudo apt install -y gpg python3-pyquery wget make gcc dpkg-dev python3-pip python3-tk "
 
 docker commit openkylin openkylin:latest
 docker save -o openkylin-test.tar openkylin:latest
