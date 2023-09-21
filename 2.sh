@@ -12,8 +12,7 @@ sudo docker exec openkylin vim --version /bin/bash
 sudo docker exec openkylin neofetch --version /bin/bash
 sudo docker exec openkylin bash -c "sudo apt-get install  -y  git fakeroot build-essential libncurses-dev xz-utils libssl-dev bc flex libelf-dev bison"
 sudo docker exec openkylin bash -c "sudo apt install -y gpg python3-pyquery wget make gcc dpkg-dev python3-pip python3-tk "
-sudo docker exec  openkylin /bin/bash /root/packages.sh
-sudo docker cp openkylin:/root/*.deb
+
 
 docker commit openkylin openkylin:latest
 docker save -o openkylin-test.tar openkylin:latest
@@ -22,4 +21,3 @@ ls -al
 sudo chmod 777 openkylin-test.tar
 ls -al
 mv ./*.tar artifact/
-mv ./*.deb artifact/
