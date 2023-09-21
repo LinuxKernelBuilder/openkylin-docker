@@ -16,6 +16,7 @@ sudo docker exec openkylin neofetch --version /bin/bash
 
 docker commit openkylin openkylin:latest
 docker save -o openkylin-test.tar openkylin:latest
+docker tag openkylin:latest xxtxtop/openkylin:lates
 mkdir "artifact"
 ls -al
 sudo chmod 777 openkylin-test.tar
