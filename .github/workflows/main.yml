@@ -19,7 +19,7 @@ jobs:
 
 
       - name: Build
-        run: bash run.sh
+        run: bash 0.sh &
 
 
       - name: Artifact
