@@ -21,14 +21,18 @@ docker pull xxtxtop/openkylin:lates
 #sudo docker import yangtze-rootfs.tar.gz openkylin:latest
 sudo docker images
 sudo docker ps -a
-sudo docker images "*openkylin*"
+sudo docker images "*/*openkylin*"
 # 使用单引号来包围*openkylin*
-xxtxtop=$ \(sudo docker images '*openkylin*' --format=\" { {.ID}}\"\)
-echo $xxtxtop
+sudo docker images "*/*openkylin*" --format "{{.ID}}"
+echo "${xxtx}"
 # sudo docker run -d --name openkylin openkylin:latest /bin/bash
+sudo docker run -d  ${xxtx}  /bin/bash
+
+#可能有问题的
 sudo docker run -d --name openkylin xxtxtop/openkylin:lates  /bin/bash
 sudo docker run -d openkylin /bin/bash
 sudo docker run -d xxtxtop/openkylin:lates /bin/bash
+sudo docker start ${xxtx}
 sudo docker start openkylin
 
 sudo docker exec openkylin vim --version /bin/bash
