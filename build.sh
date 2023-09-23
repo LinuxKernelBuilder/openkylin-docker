@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#从docker内生成根文件系统
 set -e
 
 apt update
