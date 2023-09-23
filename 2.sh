@@ -21,5 +21,5 @@ sudo chmod 777 openkylin-test.tar
 sudo chmod 777 yangtze-rootfs.tar.gz
 ls -al
 #此处可以选择是否需要导出docker镜像openkylin-test.tar或者rootfs根文件系统yangtze-rootfs.tar.gz
-mv ./*.tar artifact/
+# mv ./*.tar artifact/   个人平时使用不到处docker镜像、docker镜像直接pull
 mv ./*.tar.gz artifact/
