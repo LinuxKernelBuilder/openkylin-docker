@@ -1,4 +1,10 @@
 #!/usr/bin/bash
+pwd
+#下载较新的根文件系统
+wget https://github.com/LinuxKernelBuilder/openkylin-docker/releases/download/V0.2/yangtze-rootfs.tar.gz
+ls -al
+#把根文件导入到docker
+sudo docker import yangtze-rootfs.tar.gz openkylin:latest
 #以下是把这个镜像跑起来
 sudo docker run -dit --name openkylin openkylin:latest  /bin/bash
 sudo docker run -dit openkylin:latest  /bin/bash
