@@ -14,4 +14,7 @@ deb http://archive.build.openkylin.top/openkylin yangtze-proposed main
 EOF
 
 sudo apt update && sudo apt upgrade
-sudo apt install -y devscripts git-buildpackage pristine-tar vim neofetch git fakeroot build-essential libncurses-dev xz-utils libssl-dev bc flex libelf-dev bison gpg python3-pyquery wget make gcc dpkg-dev python3-pip python3-tk autoconf automake  gdb gdb-doc cgdb dh-make lintian pbuilder cowdancer debian-policy developers-reference systemd
+sudo apt install -y devscripts git-buildpackage pristine-tar vim neofetch git fakeroot build-essential libncurses-dev xz-utils libssl-dev bc flex libelf-dev bison gpg python3-pyquery wget make gcc dpkg-dev python3-pip python3-tk autoconf automake  gdb gdb-doc cgdb dh-make lintian pbuilder cowdancer debian-policy developers-reference systemd nodejs npm
+sudo npm install -g n
+sudo n stable
+hash -r
