@@ -5,12 +5,12 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo truncate -s 0 /etc/apt/sources.list
 
 sudo cat >> /etc/apt/sources.list << EOF
-deb http://archive.build.openkylin.top/openkylin nile main
-deb http://archive.build.openkylin.top/OTHER/Internal-mirror/repack5/baseok0.fix nile main 
-deb http://archive.build.openkylin.top/OTHER/Internal-mirror/stage0 nile main
-deb http://archive.build.openkylin.top/openkylin nile-security main
-deb http://archive.build.openkylin.top/openkylin nile-updates main
-deb http://archive.build.openkylin.top/openkylin nile-proposed main
+deb http://archive.build.openkylin.top/openkylin nile main cross pty
+deb http://archive.build.openkylin.top/openkylin nile-security main cross pty
+deb http://archive.build.openkylin.top/openkylin nile-updates main cross pty
+deb http://archive.build.openkylin.top/openkylin nile-proposed main cross pty
+deb http://ppa.build.openkylin.top/kylinsoft/anything/openkylin nile main
+deb http://ppa.build.openkylin.top/kylinsoft/wayland-next/openkylin yangtze main
 EOF
 
 sudo apt update && sudo apt upgrade
